@@ -3,6 +3,10 @@ module.exports = {
     title: `Gatsby Blog Starter`,
     description: `A Blog starter`,
     author: `Boy with Silver Wings`,
+    authorTagline: 'Engineer. Driven by Passion',
+    social: {
+      twitter: `agneymenon`,
+    },
   },
   plugins: [
     `gatsby-plugin-styled-components`,
