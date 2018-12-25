@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
   FacebookShareButton,
@@ -22,48 +22,53 @@ const Container = styled.div`
   }
 `;
 
-const Share = ({ post }) => {
-  const url = String(window.location);
-  return (
-    <Container>
-      <p
-        css={`
-          font-size: 1.4rem;
-          color: rgb(0, 0, 0);
-        `}
-      >
-        Share if you liked it:
-      </p>
-      <FacebookShareButton
-        url={url}
-        quote={`Read ${post.title} by ${post.author}`}
-        className="social-icon"
-      >
-        <FacebookIcon size={32} round />
-      </FacebookShareButton>
-      <TwitterShareButton
-        url={url}
-        title={`Read ${post.title} by ${post.author}`}
-        className="social-icon"
-      >
-        <TwitterIcon size={32} round />
-      </TwitterShareButton>
-      <EmailShareButton
-        url={url}
-        subject={`Read ${post.title} by ${post.author}`}
-        body={`${post.excerpt}
-          Read more at ${url}
-        `}
-        className="social-icon"
-      >
-        <EmailIcon size={32} round />
-      </EmailShareButton>
-      <RedditShareButton url={url} className="social-icon">
-        <RedditIcon size={32} round />
-      </RedditShareButton>
-    </Container>
-  );
-};
+class Share extends Component {
+  componentDidMount() {
+    this.url = String(window.location);
+  }
+  render() {
+    const { post } = this.props;
+    return (
+      <Container>
+        <p
+          css={`
+            font-size: 1.4rem;
+            color: rgb(0, 0, 0);
+          `}
+        >
+          Share if you liked it:
+        </p>
+        <FacebookShareButton
+          url={this.url}
+          quote={`Read ${post.title} by ${post.author}`}
+          className="social-icon"
+        >
+          <FacebookIcon size={32} round />
+        </FacebookShareButton>
+        <TwitterShareButton
+          url={this.url}
+          title={`Read ${post.title} by ${post.author}`}
+          className="social-icon"
+        >
+          <TwitterIcon size={32} round />
+        </TwitterShareButton>
+        <EmailShareButton
+          url={this.url}
+          subject={`Read ${post.title} by ${post.author}`}
+          body={`${post.excerpt}
+            Read more at ${this.url}
+          `}
+          className="social-icon"
+        >
+          <EmailIcon size={32} round />
+        </EmailShareButton>
+        <RedditShareButton url={this.url} className="social-icon">
+          <RedditIcon size={32} round />
+        </RedditShareButton>
+      </Container>
+    );
+  }
+}
 
 Share.propTypes = {
   post: PropTypes.shape({
