@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import { Container, Title, LinkList } from './post-styles';
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -13,26 +14,39 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
-        <h1>{post.frontmatter.title}</h1>
-        <p>{post.frontmatter.date}</p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr />
-        <ul>
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
+        <Container>
+          <Title>{post.frontmatter.title}</Title>
+          <sub
+            css={`
+              color: rgba(0, 0, 0, 0.6);
+            `}
+          >
+            Posted on {post.frontmatter.date}
+          </sub>
+          <div
+            css={`
+              margin: 5rem 0;
+            `}
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
+          <hr />
+          <LinkList>
+            <li>
+              {previous && (
+                <Link to={previous.fields.slug} rel="prev">
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </li>
+            <li>
+              {next && (
+                <Link to={next.fields.slug} rel="next">
+                  {next.frontmatter.title} →
+                </Link>
+              )}
+            </li>
+          </LinkList>
+        </Container>
       </Layout>
     );
   }

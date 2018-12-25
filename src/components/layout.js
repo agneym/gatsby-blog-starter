@@ -29,6 +29,16 @@ const GlobalStyles = createGlobalStyle`
     position: relative;
     font-size: 1.6rem;
   }
+
+  code {
+    font-family: Menlo,Monaco,"Courier New",Courier,monospace;
+  }
+
+  :not(pre) > code[class*="language-"], pre[class*="language-text"] {
+    background-color: transparent;
+    color: inherit;
+    font-size: medium;
+  }
 `;
 
 const Content = styled.div`
