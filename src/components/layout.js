@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
+import Header from './header';
 import './layout.css';
 
 class Layout extends Component {
@@ -20,6 +21,7 @@ class Layout extends Component {
         `}
         render={data => (
           <>
+            <Header title={data.site.siteMetadata.title} />
             <div>{children}</div>
           </>
         )}
