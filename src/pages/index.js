@@ -25,7 +25,7 @@ class BlogIndex extends Component {
             Latest Posts
           </h3>
           {posts.map(({ node }) => {
-            return <Post node={node} key={node.id} />;
+            return <Post key={node.id} node={node} />;
           })}
         </main>
       </Layout>
@@ -45,6 +45,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
+          id
           excerpt(pruneLength: 160)
           fields {
             slug

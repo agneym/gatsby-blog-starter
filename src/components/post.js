@@ -29,13 +29,13 @@ const Post = ({ node }) => (
 );
 
 Post.propTypes = {
-  node: PropTypes.objectOf({
+  node: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    frontmatter: PropTypes.objectOf({
+    frontmatter: PropTypes.shape({
       title: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
     }),
-    fields: PropTypes.objectOf({
+    fields: PropTypes.shape({
       slug: PropTypes.string.isRequired,
     }),
     excerpt: PropTypes.string.isRequired,

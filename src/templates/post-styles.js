@@ -34,11 +34,10 @@ export const Container = styled.article`
   }
 
   hr {
-    border-top: 1px solid #ccc;
+    border: 0;
+    border-top: 0.1rem solid #ccc;
     display: block;
     height: 1rem;
-    border: 0;
-    margin: 1rem 0;
     padding: 0;
   }
 `;

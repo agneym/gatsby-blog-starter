@@ -4,11 +4,13 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { Container, Title, LinkList } from './post-styles';
+import Share from '../components/share';
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
     const siteTitle = this.props.data.site.siteMetadata.title;
+    const author = this.props.data.site.siteMetadata.author;
     const { previous, next } = this.props.pageContext;
 
     return (
@@ -31,7 +33,13 @@ class BlogPostTemplate extends React.Component {
             `}
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
-          <hr />
+          <Share
+            post={{
+              title: post.frontmatter.title,
+              excerpt: post.excerpt,
+              author: author,
+            }}
+          />
           <LinkList>
             <li>
               {previous && (
