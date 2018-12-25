@@ -4,6 +4,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 
 import Header from './header';
+import media from '../utils/media';
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -66,6 +67,10 @@ const Content = styled.div`
   width: 60%;
   max-width: 728px;
   margin: 0 auto;
+
+  ${media.tablet`
+    width: 80%;
+  `}
 `;
 
 class Layout extends Component {
