@@ -1,17 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-const BlogIndex = () => (
-  <Layout>
-    <SEO title="All Posts" keywords={[`gatsby`, `blog`, `react`]} />
-    <header>
-      <h1>Blog</h1>
-    </header>
-  </Layout>
-);
+class BlogIndex extends Component {
+  render() {
+    const { data } = this.props;
+    console.log(this.props);
+    const siteTitle = data.site.siteMetadata.title;
+    const posts = data.allMarkdownRemark.edges;
+
+    return (
+      <Layout>
+        <SEO title="All Posts" keywords={[`gatsby`, `blog`, `react`]} />
+        <header>
+          <h1>{siteTitle}</h1>
+        </header>
+        <main>
+          {posts.map(({ node }) => {
+            return (
+              <article>
+                <h4>{node.frontmatter.title}</h4>
+                <p>{node.excerpt}</p>
+              </article>
+            );
+          })}
+        </main>
+      </Layout>
+    );
+  }
+}
 
 export default BlogIndex;
 
@@ -25,7 +44,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          excerpt
+          excerpt(pruneLength: 150)
           fields {
             slug
           }
