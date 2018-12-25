@@ -11,13 +11,18 @@ const Container = styled.div`
 
 const Title = styled.h4`
   margin-bottom: 0.2rem;
+  font-size: 2.2rem;
 `;
 
 const Post = ({ node }) => (
   <StyledLink to={node.fields.slug}>
     <Container>
       <Title>{node.frontmatter.title}</Title>
-      <small>on {node.frontmatter.date}</small>
+      <sub>
+        <span>on {node.frontmatter.date}</span>
+        <span>&nbsp; - &nbsp;</span>
+        <span>{node.fields.readingTime.text}</span>
+      </sub>
       <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
     </Container>
   </StyledLink>
