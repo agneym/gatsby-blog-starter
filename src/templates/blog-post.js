@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 class BlogPostTemplate extends React.Component {
@@ -22,8 +22,6 @@ class BlogPostTemplate extends React.Component {
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
         <hr />
-        <Bio />
-
         <ul>
           <li>
             {previous && (
