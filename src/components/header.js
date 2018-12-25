@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
+
+import StyledLink from '../utils/styled-link';
 
 const Container = styled.nav`
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
@@ -9,11 +10,6 @@ const Container = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: rgba(0, 0, 0, 0.8);
 `;
 
 const Title = styled.h1`

@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Bio from '../components/bio';
+import Post from '../components/post';
 
 class BlogIndex extends Component {
   render() {
@@ -24,12 +25,7 @@ class BlogIndex extends Component {
             Latest Posts
           </h3>
           {posts.map(({ node }) => {
-            return (
-              <article key={node.id}>
-                <h4>{node.frontmatter.title}</h4>
-                <p>{node.excerpt}</p>
-              </article>
-            );
+            return <Post node={node} key={node.id} />;
           })}
         </main>
       </Layout>

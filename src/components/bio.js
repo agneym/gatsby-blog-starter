@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { StaticQuery, graphql, Link } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 
 import Twitter from '../images/social/twitter.svg';
