@@ -1,5 +1,5 @@
 ---
-title: 'Why is my state not getting updated'
+title: 'Lets look at some code'
 date: '2018-04-14T22:12:03.284Z'
 ---
 

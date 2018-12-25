@@ -10,7 +10,6 @@ class BlogIndex extends Component {
   render() {
     const { data } = this.props;
     const posts = data.allMarkdownRemark.edges;
-
     return (
       <Layout>
         <SEO title="All Posts" keywords={[`gatsby`, `blog`, `react`]} />
@@ -19,6 +18,7 @@ class BlogIndex extends Component {
           <h3
             css={`
               font-weight: 800;
+              font-size: 2.6rem;
               margin: 4rem 0 2rem;
             `}
           >

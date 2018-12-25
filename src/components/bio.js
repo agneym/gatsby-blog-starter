@@ -13,18 +13,20 @@ const Container = styled.div`
 `;
 
 const Name = styled.h3`
-  font-size: 2rem;
+  font-size: 2.4rem;
   letter-spacing: 0.1rem;
   font-weight: 800;
   margin-bottom: 1rem;
   width: 100%;
   white-space: nowrap;
+  font-family: 'system';
 `;
 
-const TagLine = styled.h4`
+const TagLine = styled.sub`
   font-weight: normal;
   font-size: 1.6rem;
   margin: 0;
+  display: block;
 `;
 
 const TwitterIcon = styled.img`
