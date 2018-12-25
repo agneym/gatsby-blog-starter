@@ -1,10 +1,35 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 
 import Header from './header';
-import './layout.css';
+
+const GlobalStyles = createGlobalStyle`
+  @font-face {
+    font-family: system;
+    font-style: normal;
+    font-weight: 300;
+    src: local('.SFNSText-Light'), local('.HelveticaNeueDeskInterface-Light'),
+      local('.LucidaGrandeUI'), local('Ubuntu Light'), local('Segoe UI Light'),
+      local('Roboto-Light'), local('DroidSans'), local('Tahoma');
+  }
+
+  :root {
+    font-size: 10px;
+  }
+
+  body {
+    font-family: 'system';
+    margin: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    color: rgba(0, 0, 0, 0.8);
+    min-height: 100vh;
+    position: relative;
+    font-size: 1.6rem;
+  }
+`;
 
 const Content = styled.div`
   width: 60%;
@@ -30,6 +55,7 @@ class Layout extends Component {
           <>
             <Header title={data.site.siteMetadata.title} />
             <Content>{children}</Content>
+            <GlobalStyles />
           </>
         )}
       />
