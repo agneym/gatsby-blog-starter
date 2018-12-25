@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { Container, Title, LinkList } from './post-styles';
+import { Container, Title, LinkList, Header } from './post-styles';
 import Share from '../components/share';
 
 class BlogPostTemplate extends React.Component {
@@ -17,16 +17,18 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         <Container>
-          <Title>{post.frontmatter.title}</Title>
-          <sub
-            css={`
-              color: rgba(0, 0, 0, 0.8);
-            `}
-          >
-            <span>Posted on {post.frontmatter.date}</span>
-            <span>&nbsp; - &nbsp;</span>
-            <span>{post.fields.readingTime.text}</span>
-          </sub>
+          <Header>
+            <Title>{post.frontmatter.title}</Title>
+            <sub
+              css={`
+                color: rgba(0, 0, 0, 0.8);
+              `}
+            >
+              <span>Posted on {post.frontmatter.date}</span>
+              <span>&nbsp; - &nbsp;</span>
+              <span>{post.fields.readingTime.text}</span>
+            </sub>
+          </Header>
           <div
             css={`
               margin: 5rem 0;

@@ -1,7 +1,13 @@
 import styled from 'styled-components';
 
+import media from '../utils/media';
+
 export const Container = styled.article`
   margin-top: 8rem;
+
+  ${media.phone`
+    margin-top: 4rem;
+  `}
 
   p {
     line-height: 1.5;
@@ -40,6 +46,12 @@ export const Container = styled.article`
     height: 1rem;
     padding: 0;
   }
+`;
+
+export const Header = styled.header`
+  ${media.tablet`
+    text-align: center;
+  `};
 `;
 
 export const Title = styled.h1`

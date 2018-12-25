@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 
+import media from '../utils/media';
 import Twitter from '../images/social/twitter.svg';
 
 const Container = styled.div`
@@ -10,6 +11,11 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 5rem 0;
+
+  ${media.tablet`
+    flex-direction: column;
+    text-align: center;
+  `}
 `;
 
 const Name = styled.h3`
