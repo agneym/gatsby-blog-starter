@@ -14,13 +14,10 @@ class BlogIndex extends Component {
     return (
       <Layout>
         <SEO title="All Posts" keywords={[`gatsby`, `blog`, `react`]} />
-        <header>
-          <h1>{siteTitle}</h1>
-        </header>
         <main>
           {posts.map(({ node }) => {
             return (
-              <article>
+              <article key={node.id}>
                 <h4>{node.frontmatter.title}</h4>
                 <p>{node.excerpt}</p>
               </article>
