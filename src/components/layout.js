@@ -30,8 +30,29 @@ const GlobalStyles = createGlobalStyle`
     font-size: 1.6rem;
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+  }
+  
   code {
     font-family: Menlo,Monaco,"Courier New",Courier,monospace;
+    word-break: break-word;
+  }
+
+  pre code {
+    word-break: normal;
   }
 
   :not(pre) > code[class*="language-"], pre[class*="language-text"] {

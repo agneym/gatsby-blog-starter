@@ -18,10 +18,12 @@ class BlogPostTemplate extends React.Component {
           <Title>{post.frontmatter.title}</Title>
           <sub
             css={`
-              color: rgba(0, 0, 0, 0.6);
+              color: rgba(0, 0, 0, 0.8);
             `}
           >
-            Posted on {post.frontmatter.date}
+            <span>Posted on {post.frontmatter.date}</span>
+            <span>&nbsp; - &nbsp;</span>
+            <span>{post.fields.readingTime.text}</span>
           </sub>
           <div
             css={`
@@ -66,6 +68,11 @@ export const pageQuery = graphql`
       id
       excerpt
       html
+      fields {
+        readingTime {
+          text
+        }
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

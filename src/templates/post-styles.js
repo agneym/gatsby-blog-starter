@@ -30,7 +30,7 @@ export const Container = styled.article`
   h4,
   h5,
   h6 {
-    margin: 5rem 0 3rem;
+    margin: 2rem 0 2rem;
   }
 
   hr {
@@ -45,6 +45,7 @@ export const Container = styled.article`
 
 export const Title = styled.h1`
   margin-bottom: 1rem;
+  font-size: 3rem;
 `;
 
 export const LinkList = styled.ul`
