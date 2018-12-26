@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "gatsby-minimal-blog",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A simple minimal starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
   "author": "Boy with Silver Wings <agney@outlook.in>",
   "dependencies": {
@@ -37,7 +37,8 @@
   "keywords": [
     "gatsby",
     "styled-components",
-    "blog"
+    "blog",
+    "minimal"
   ],
   "license": "MIT",
   "scripts": {
@@ -64,9 +65,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/BoyWithSilverWings/gatsby-blog-starter"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/BoyWithSilverWings/gatsby-blog-starter/issues"
   }
 }
