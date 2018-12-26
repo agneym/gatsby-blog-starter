@@ -19,7 +19,7 @@ class BlogIndex extends Component {
             css={`
               font-weight: 800;
               font-size: 2.6rem;
-              margin: 4rem 0 2rem;
+              margin: 6rem 0 0;
             `}
           >
             Latest Posts

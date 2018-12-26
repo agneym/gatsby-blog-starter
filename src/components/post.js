@@ -7,6 +7,10 @@ import StyledLink from '../utils/styled-link';
 const Container = styled.div`
   padding: 1rem 0;
   margin: 1rem 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
 `;
 
 const Title = styled.h4`
