@@ -18,13 +18,26 @@ const Container = styled.div`
   `}
 `;
 
+const TextContainer = styled.div`
+  ${media.phone`
+    order: 2;
+  `}
+`;
+
+const ImageContainer = styled.div`
+  ${media.phone`
+    order: 1;
+  `}
+`;
+
 const Name = styled.h3`
   font-size: 2.4rem;
   letter-spacing: 0.1rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  width: 100%;
   white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
   font-family: 'system';
 `;
 
@@ -48,7 +61,7 @@ const Bio = () => (
       const { author, authorTagline, social } = data.site.siteMetadata;
       return (
         <Container>
-          <div>
+          <TextContainer>
             <Name>{author}</Name>
             <TagLine>{authorTagline}</TagLine>
             <a
@@ -58,8 +71,10 @@ const Bio = () => (
             >
               <TwitterIcon src={Twitter} alt="twitter" />
             </a>
-          </div>
-          <Image fixed={data.avatar.childImageSharp.fixed} alt={author} />
+          </TextContainer>
+          <ImageContainer>
+            <Image fixed={data.avatar.childImageSharp.fixed} alt={author} />
+          </ImageContainer>
         </Container>
       );
     }}

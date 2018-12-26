@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import StyledLink from '../utils/styled-link';
+import media from '../utils/media';
 
 const Container = styled.div`
   padding: 1rem 0;
@@ -11,6 +12,11 @@ const Container = styled.div`
   &:first-child {
     margin-top: 0;
   }
+
+  ${media.phone`
+    margin: 0.5rem 0;
+    padding: 0.4rem 0;
+  `}
 `;
 
 const Title = styled.h4`
