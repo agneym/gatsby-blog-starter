@@ -63,6 +63,11 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
+const Footer = styled.footer`
+  display: block;
+  height: 6rem;
+`;
+
 const Content = styled.div`
   width: 60%;
   max-width: 728px;
@@ -91,6 +96,7 @@ class Layout extends Component {
           <>
             <Header title={data.site.siteMetadata.title} />
             <Content>{children}</Content>
+            <Footer />
             <GlobalStyles />
           </>
         )}
