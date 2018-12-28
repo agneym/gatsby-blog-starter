@@ -23,11 +23,20 @@ const Container = styled.div`
 `;
 
 class Share extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      url: null,
+    };
+  }
   componentDidMount() {
-    this.url = String(window.location);
+    this.setState({
+      url: window.location.href,
+    });
   }
   render() {
     const { post } = this.props;
+    const { url } = this.state;
     return (
       <Container>
         <p
@@ -38,33 +47,37 @@ class Share extends Component {
         >
           Share if you liked it:
         </p>
-        <FacebookShareButton
-          url={this.url}
-          quote={`Read ${post.title} by ${post.author}`}
-          className="social-icon"
-        >
-          <FacebookIcon size={32} round />
-        </FacebookShareButton>
-        <TwitterShareButton
-          url={this.url}
-          title={`Read ${post.title} by ${post.author}`}
-          className="social-icon"
-        >
-          <TwitterIcon size={32} round />
-        </TwitterShareButton>
-        <EmailShareButton
-          url={this.url}
-          subject={`Read ${post.title} by ${post.author}`}
-          body={`${post.excerpt}
-            Read more at ${this.url}
-          `}
-          className="social-icon"
-        >
-          <EmailIcon size={32} round />
-        </EmailShareButton>
-        <RedditShareButton url={this.url} className="social-icon">
-          <RedditIcon size={32} round />
-        </RedditShareButton>
+        {url && (
+          <>
+            <FacebookShareButton
+              url={url}
+              quote={`Read ${post.title} by ${post.author}`}
+              className="social-icon"
+            >
+              <FacebookIcon size={32} round />
+            </FacebookShareButton>
+            <TwitterShareButton
+              url={url}
+              title={`Read ${post.title} by ${post.author}`}
+              className="social-icon"
+            >
+              <TwitterIcon size={32} round />
+            </TwitterShareButton>
+            <EmailShareButton
+              url={url}
+              subject={`Read ${post.title} by ${post.author}`}
+              body={`${post.excerpt}
+                Read more at ${url}
+              `}
+              className="social-icon"
+            >
+              <EmailIcon size={32} round />
+            </EmailShareButton>
+            <RedditShareButton url={url} className="social-icon">
+              <RedditIcon size={32} round />
+            </RedditShareButton>
+          </>
+        )}
       </Container>
     );
   }
