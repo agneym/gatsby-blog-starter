@@ -49,6 +49,7 @@ This project with `styled-components` shows off a minimalist blog layout.
 ## Blogs using this theme:
 
 - [Mindless](https://blog.agney.in)
+- [Cheatsheet](http://blog.amaljose.com/)
 - _Add yours here_
 
 ## 🧐 What's inside?
